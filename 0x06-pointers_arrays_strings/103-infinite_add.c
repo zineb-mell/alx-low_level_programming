@@ -8,21 +8,21 @@
 
 void rev_string(char *n)
 {
-	int k = 0;
-	int r = 0;
+	int i = 0;
+	int j = 0;
 	char temp;
 
-	while (*(n + k) != '\0')
+	while (*(n + i) != '\0')
 	{
-		k++;
+		i++;
 	}
-	k--;
+	i--;
 
-	for (x = 0; x < k; x++, k--)
+	for (j = 0; j < i; j++, i--)
 	{
-		temp = *(n + x);
-		*(n + x) = *(n + k);
-		*(n + k) = temp;
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
 	}
 }
 
@@ -37,27 +37,27 @@ void rev_string(char *n)
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int overflow = 0, k = 0, x = 0, digits = 0;
+	int overflow = 0, i = 0, j = 0, digits = 0;
 	int val1 = 0, val2 = 0, temp_tot = 0;
 
-	while (*(n1 + k) != '\0')
-		k++;
-	while (*(n2 + x) != '\0')
-		x++;
-	k--;
-	x--;
-	if (x >= size_r || k >= size_r)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
 		return (0);
-	while (x >= 0 || k >= 0 || overflow == 1)
+	while (j >= 0 || i >= 0 || overflow == 1)
 	{
-		if (k < 0)
+		if (i < 0)
 			val1 = 0;
 		else
-			val1 = *(n1 + k) - '0';
-		if (x < 0)
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
 			val2 = 0;
 		else
-			val2 = *(n2 + x) - '0';
+			val2 = *(n2 + j) - '0';
 		temp_tot = val1 + val2 + overflow;
 		if (temp_tot >= 10)
 			overflow = 1;
@@ -67,8 +67,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			return (0);
 		*(r + digits) = (temp_tot % 10) + '0';
 		digits++;
-		x--;
-		k--;
+		j--;
+		i--;
 	}
 	if (digits == size_r)
 		return (0);
