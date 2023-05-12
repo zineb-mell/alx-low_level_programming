@@ -15,8 +15,8 @@ int _atoi(char *s)
 	x = 0;
 	n = 0;
 	len = 0;
-	f = 0;
-	jigit = 0;
+	j = 0;
+	digit = 0;
 
 	while (s[len] != '\0')
 		len++;
