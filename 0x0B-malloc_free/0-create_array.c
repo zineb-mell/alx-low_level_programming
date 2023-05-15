@@ -10,7 +10,7 @@
  *
  */
 
-char *create_array(unsigned int size, char c)
+char *create_array(unsigned int size, char c);
 {
 	char *str;
 	unsigned int x;
@@ -18,8 +18,12 @@ char *create_array(unsigned int size, char c)
 	str = malloc(sizeof(char) * size);
 
 	if (size == 0 || str == NULL)
+	{
 		return (NULL);
-	for (x = 0; x < size; x++
+	}
+	for (x = 0; x < size; x++)
+	{
 		str[x] = c;
-		return (str);
+	}
+	return (str);
 }
