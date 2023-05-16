@@ -48,7 +48,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (m = 0; m <= len; m++)
 	{
-		if (str[i] == ' ' || str[m] == '\0')
+		if (str[m] == ' ' || str[m] == '\0')
 		{
 			if (c)
 			{
