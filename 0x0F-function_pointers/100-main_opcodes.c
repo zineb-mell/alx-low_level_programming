@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	arr = (char *)main;
 
-	for (j= 0; j < bytes; j++)
+	for (j = 0; j < bytes; j++)
 	{
 		if (j == bytes - 1)
 		{
@@ -40,4 +40,3 @@ int main(int argc, char *argv[])
 	}
 	return (0);
 }
-
